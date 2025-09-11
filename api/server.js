@@ -10,6 +10,7 @@ const phraseRoute = require("../routes/phrase");
 const allowedOrigins = [
   "http://localhost:3000",
   "https://node-connector-gules.vercel.app/",
+  "https://node-connector-b83l.vercel.app/",
 ];
 
 app.use(
