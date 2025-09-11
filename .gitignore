@@ -1,2 +1,8 @@
-*.env
+# Node modules
 /node_modules
+
+# Environment variables
+*.env
+
+# Vercel config folder
+.vercel
