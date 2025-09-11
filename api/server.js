@@ -7,7 +7,10 @@ const cors = require("cors");
 // Import routes
 const phraseRoute = require("../routes/phrase");
 // Allowed CORS origins
-const allowedOrigins = ["http://localhost:3000"];
+const allowedOrigins = [
+  "http://localhost:3000",
+  "https://node-connector-gules.vercel.app/",
+];
 
 app.use(
   cors({
