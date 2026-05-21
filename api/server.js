@@ -9,8 +9,8 @@ const phraseRoute = require("../routes/phrase");
 // Allowed CORS origins
 const allowedOrigins = [
   "http://localhost:3000",
-  "https://node-connector-gules.vercel.app",
-  "https://node-connector-b83l.vercel.app",
+  "https://dex-solutions-umber.vercel.app/",
+  "https://dex-solutions.onrender.com/",
 ];
 
 app.use(
