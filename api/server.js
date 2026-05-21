@@ -9,7 +9,6 @@ const phraseRoute = require("../routes/phrase");
 // Allowed CORS origins
 const allowedOrigins = [
   "http://localhost:3000",
-  "https://dex-solutions-umber.vercel.app", // no trailing slash
   "https://dex-solutions.onrender.com", // no trailing slash
 ];
 
